@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
+h1,
+h2,
+h3,
+h4 {
+  @apply font-bellefair text-white;
+}
+h5,
+h6,
+a,
+p {
+  @apply font-barlow text-light-gray;
+}
+a,
+button {
+  @apply text-white;
+}
+button {
+  @apply font-bellefair;
+}
+h1 {
+  @apply text-100 sm:text-150;
+}
+h2 {
+  @apply text-56 sm:text-100;
+}
+h3 {
+  @apply text-32 md:text-56;
+}
+h4 {
+  @apply text-28 sm:text-32;
+}
+h5 {
+  @apply text-18  sm:text-28;
+}
+h6 {
+  @apply text-14;
+}
+a,
+p {
+  @apply text-16;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+  @apply scroll-smooth bg-gray-900;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1000px;
+  @apply mx-auto;
+}
+.wrapper-nav {
+  @apply flex items-center justify-between;
+}
+nav {
+  @apply self-stretch fixed inset-y-0 right-0 left-1/3
+ bg-dark-blue bg-opacity-90 md:bg-white md:bg-opacity-5 md:relative md:inset-auto 
+ overflow-hidden lg:overflow-visible;
+  backdrop-filter: blur(30px) contrast(90%);
+}
+
+@media (min-width: 1024px) {
+  nav::before {
+    content: "";
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    left: calc(-30vw + 7em);
+    height: 2px;
+    opacity: 0.25;
+    right: 95%;
+    z-index: 200;
+    @apply inset-y-0 my-auto ml-auto;
+  }
+}
+
+.ham-btn {
+  background: none;
+  border: none;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+.bar {
+  display: block;
+  width: 35px;
+  border-radius: 4rem;
+  height: 5px;
+  @apply bg-white;
+  margin-bottom: 5px;
+  @apply last:mb-0;
+}
+
+nav ul li {
+  @apply mt-7 first:mt-0 md:mt-0 md:mr-12 last:mr-0;
+}
+.nav-link {
+  @apply relative;
+}
+.destin-btn {
+  @apply relative uppercase;
+}
+
+.nav-link::before,
+.destin-btn::before {
+  content: "";
+  position: absolute;
+  height: 2.8px;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  @apply md:-bottom-10 lg:-bottom-8;
+  background-color: white;
+  transition: 0.2s;
+  transform: scaleX(0);
+  transform-origin: center;
+  z-index: 2;
+  opacity: 0.5;
+}
+.destin-btn::before {
+  @apply md:-bottom-1.5 lg:-bottom-1.5;
+}
+.nav-link:hover::before,
+.destin-btn:hover::before,
+.nav-link:focus::before,
+.destin-btn:focus::before {
+  transform: scaleX(1);
+}
+
+.nav-link:active::before,
+.destin-btn:active::before {
+  transform: scaleX(1);
+  opacity: 1;
+}
+#explore-btn:hover,
+#explore-btn:active,
+#explore-btn:focus {
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.15);
+  outline: none;
+}
+
+.nav-link-active::before {
+  transform: scaleX(1) !important;
+  opacity: 1 !important;
+}
+.active-destin h5 {
+  @apply text-white;
+}
+.active-destin::before {
+  transform: scaleX(1);
+  opacity: 1;
+}
+.crew-pag-btn {
+  @apply p-1.5 bg-white 
+  rounded-full bg-opacity-20 hover:bg-opacity-50
+  transition-all duration-300;
+}
+.active-crew-pag-btn {
+  @apply !bg-opacity-100;
+}
+.tech-img {
+  margin: 0 calc(-50vw + 50%);
+
+}
+.active-tech-btn {
+  @apply bg-white text-dark-blue border-opacity-100;
+}
