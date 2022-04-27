@@ -4,5 +4,4 @@
 This website was created using React JS and Tailwind CSS.<br/>
 It is a SPA(Single Page Application) and React Router has been used for routing. <br/>
 
-This website is a coding challenge from https://www.frontendmentor.io/.
 
